@@ -1,0 +1,24 @@
+{% extends "boutique/layout.html" %}
+
+{% load static %}
+
+{% block head %}
+	{% block title %}{{ item.name }}{% endblock %}
+{% endblock %}
+
+{% block body %}
+	<h1 class="name">{{ item.name }}</h1>
+	<div class="wrapper">
+		{% if item.pic %}
+			<img id="pic" src="{{ item.pic.url }}">
+		{% endif %}
+		<br>
+		<ul>
+			<li>Price: {{ item.price }}</li>
+			<hr>
+			<li>Description: {{ item.description }}</li>
+			<hr>
+			<li class="date">Available since: {{ item.date }}</li>
+		</ul>
+	</div>
+{% endblock %}

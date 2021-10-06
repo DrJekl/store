@@ -1,0 +1,25 @@
+{% extends "boutique/layout.html" %}
+
+{% load static %}
+
+{% block head %}
+	{% block title %}
+		Collection
+	{% endblock %}
+{% endblock %}
+
+{% block body %}
+	<h1 style="color: blueviolet; padding-top: 30px">Our Collection</h1>
+	<div class="wrapper">
+		<ul>
+			{% for item in collection %}
+				<li class="name"><a href="{% url 'look' item.name %}">{{ item.name }}</a></li>
+				{% if item.pic %}
+					<li><img src="media/{{ item.pic }}" id="thumb"></li>
+				{% endif %}
+				<li>{{ item.price }}</li>
+				<br>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "boutique/layout.html" %}
+
+{% block head %}
+	{% block title %}Request{% endblock %}
+{% endblock %}
+
+{% block body %}
+	<p>{{ message }}</p>
+	<div class="wrapper">
+		<div class="form-group">
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<table>
+					{{ form.as_table }}
+				</table>
+				<input type="submit">
+			</form>
+		</div>
+	</div>
+{% endblock %}

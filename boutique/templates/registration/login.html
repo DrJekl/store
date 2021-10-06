@@ -1,0 +1,33 @@
+{% extends "boutique/layout.html" %}
+
+{% block head %}
+	{% block title %}Log In{% endblock %}
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			let elements = document.querySelectorAll("td");
+			for (let i = 0; i < elements.length; i++) {
+				elements[i].classList.add("form-control");
+			}
+		});
+	</script>
+{% endblock %}
+
+{% block body %}
+	<h1>Log In</h1>
+
+	{% if not request.user %}
+		<form method="post">
+			{% csrf_token %}
+			<div class="wrapper">
+				<div class="form-group">
+					<table>
+						{{ form.as_table }}
+					</table>
+					<input type="submit" value="Log In">
+				</div>
+			</div>
+		</form>
+	{% else %}
+		<p>You are already logged in</p>
+	{% endif %}
+{% endblock %}

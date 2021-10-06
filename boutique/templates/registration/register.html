@@ -1,0 +1,25 @@
+{% extends "boutique/layout.html" %}
+
+{% block head %}
+	{% block title %}Register{% endblock %}
+{% endblock %}
+
+{% block body %}
+
+	<h1>Register</h1>
+
+	{% if not request.user %}
+		<div class="wrapper">
+			<form method="post" class="form-group">
+				{% csrf_token %}
+				<table>
+					{{ form.as_table }}
+				</table>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	{% else %}
+		<p>You are already registered</p>
+	{% endif %}
+
+{% endblock %}
