@@ -78,3 +78,6 @@ def mystuff(request):
 			"bought": bought,
 			"demands": demands
 		})
+
+def about(request):
+	return render(request, "boutique/about.html")

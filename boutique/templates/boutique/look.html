@@ -3,7 +3,9 @@
 {% load static %}
 
 {% block head %}
-	{% block title %}{{ item.name }}{% endblock %}
+	<title>
+		{% block title %}{{ item.name }}{% endblock %}
+	</title>
 {% endblock %}
 
 {% block body %}

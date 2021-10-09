@@ -2,10 +2,6 @@ html
 {
 	
 }
-title
-{
-	display: none;
-}
 body
 {
 	padding: 50px;
@@ -43,7 +39,7 @@ a
 }
 .nav
 {
-	width: 40%;
+	width: 50%;
 	background-color: unset;
 }
 .wrapper
@@ -51,7 +47,7 @@ a
 	padding: 50px;
 	display: flex;
 	width: 90%;
-	opacity: 40%;
+	opacity: 90%;
 }
 .name
 {

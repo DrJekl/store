@@ -1,14 +1,19 @@
 {% extends "boutique/layout.html" %}
 
 {% block head %}
+<style>
+	body {background-image: unset;}
+</style>
+<title>
 	{% block title %}Register{% endblock %}
+</title>
 {% endblock %}
 
 {% block body %}
 
 	<h1>Register</h1>
 
-	{% if not request.user %}
+	{% if not request.user.is_authenticated %}
 		<div class="wrapper">
 			<form method="post" class="form-group">
 				{% csrf_token %}

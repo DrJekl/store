@@ -1,0 +1,25 @@
+{% extends "boutique/layout.html" %}
+
+{% load static %}
+
+{% block head %}
+	<title>
+		{% block title %}About Us{% endblock %}
+	</title>
+	<style>
+		body {background-image: url("{% static 'boutique/images/infield.jpeg' %}");}
+		p 
+		{
+			-webkit-text-fill-color: blue;
+			-webkit-text-stroke-width: 1px;
+			-webkit-text-stroke-color: green;
+			font-size: 150%;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+<h1>About Us</h1>
+<br>
+<p>We make all of our products using 100% natural cloth and dye. Everything is made by hand to the highest standards!</p>
+{% endblock %}
