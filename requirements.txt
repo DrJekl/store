@@ -1,0 +1,4 @@
+Gunicorn==20.1.0
+Django==3.2.5
+Jinja2==2.11.2
+Django-Heroku==0.3.1
