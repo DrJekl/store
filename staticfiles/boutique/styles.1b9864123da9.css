@@ -1,0 +1,66 @@
+html
+{
+	
+}
+body
+{
+	padding: 50px;
+	background-image: url("images/sunsetmeadow.e7d2c16a4c2a.jpg");
+	background-size: 100%;
+}
+ul
+{
+	border-radius: 10px;
+	list-style: none;
+	background-color: pink;
+}
+li
+{
+	padding: 5px;
+}
+div
+{
+	border-radius: 10px;
+}
+img
+{
+	background: black;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.5);
+	transition: 0.3s transform cubic-bezier(0.16, 1.2, 0.3, 1.1), 0.3s box-shadow, 0.3s -webkit-transform cubic-bezier(0.16, 1.2, 0.3, 1.1);
+}
+img:hover
+{
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0, 4px, 8px rgba(0, 0, 0, 0.1);
+}
+a
+{
+	text-decoration: none;
+}
+.nav
+{
+	width: 50%;
+	background-color: unset;
+}
+.wrapper
+{
+	padding: 50px;
+	display: flex;
+	width: 90%;
+	opacity: 90%;
+}
+.name
+{
+	padding: 10px;
+	font-family: "Brush Script MT", cursive;
+	font-size: 120%;
+}
+.date
+{
+	position: absolute;
+	bottom: 25px;
+}
+#thumb
+{
+	margin-right: 10px;
+}
