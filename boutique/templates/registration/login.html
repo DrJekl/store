@@ -1,11 +1,16 @@
 {% extends "boutique/layout.html" %}
 
+{% load static %}
+
 {% block head %}
 	<title>
 		{% block title %}Log In{% endblock %}
 	</title>
 	<style>
-		body {background-image: unset;}
+		body {
+			background-image: unset;
+			background-image: url("{% static 'boutique/images/dawn.jpg' %}");
+		}
 	</style>
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
