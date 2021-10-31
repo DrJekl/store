@@ -17,7 +17,7 @@
 			{% for item in collection %}
 				<li class="name"><a href="{% url 'look' item.name %}">{{ item.name }}</a></li>
 				{% if item.pic %}
-					<li><img src="media/{{ item.pic.url }}" id="thumb"></li>
+					<li><img src="{{ item.pic.url }}" id="thumb"></li>
 				{% endif %}
 				<li>{{ item.price }}</li>
 				<br>
