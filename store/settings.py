@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(yef8rh(oj-7m35rt6b4i=ec49ccea7i2$6v#z9_*596e13y4y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -128,8 +128,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+if DEBUG == True:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Django.auth registration
 
@@ -160,10 +161,12 @@ AWS_ACCESS_KEY_ID = os.environ.get('AKIAY2KB57XVQYJSI6HC')
 AWS_SECRET_ACCESS_KEY = os.environ.get('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')
 AWS_STORAGE_BUCKET_NAME = 'nagelmadebucket'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
-STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.eu-west-1.amazonaws.com/'
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+if DEBUG == False:
+    MEDIA_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.eu-west-1.amazonaws.com/'
+    # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 AWS_QUERYSTRING_AUTH = False
