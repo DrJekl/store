@@ -166,6 +166,7 @@ AWS_STORAGE_BUCKET_NAME = 'nagelmadebucket'
 
 if DEBUG == False:
     MEDIA_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.eu-west-1.amazonaws.com/'
+    MEDIAFILES_LOCATION = 'media'
     # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
