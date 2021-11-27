@@ -162,11 +162,10 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('aW0EUldYZtUvYUEBwObK6JqJ29aI6kEnvXefvB96
 AWS_STORAGE_BUCKET_NAME = 'nagelmadebucket'
 
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 if DEBUG == False:
     MEDIA_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.eu-west-1.amazonaws.com/'
-    MEDIAFILES_LOCATION = 'media'
     # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
