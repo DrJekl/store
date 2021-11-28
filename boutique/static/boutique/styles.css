@@ -8,6 +8,11 @@ body
 	background-image: url("images/sunsetmeadow.jpg");
 	background-size: 100%;
 }
+h1
+{
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: lightskyblue;
+}
 ul
 {
 	border-radius: 10px;
@@ -43,8 +48,19 @@ label
 }
 .nav
 {
-	width: 50%;
+	width: 70%;
 	background-color: unset;
+}
+.nav-link
+{
+	font-size: 130%;
+}
+.nav-link:hover
+{
+	font-size: 130%;
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: navy;
 }
 .wrapper
 {
@@ -57,14 +73,41 @@ label
 {
 	padding: 10px;
 	font-family: "Brush Script MT", cursive;
-	font-size: 120%;
+	font-size: 130%;
+}
+.name:hover
+{
+	text-decoration: underline;
+	color: #32174d;
+}
+.title
+{
+	-webkit-text-strok-width: 1px;
+	-webkit-text-stroke-color: pink;
 }
 .date
 {
 	position: absolute;
 	bottom: 25px;
 }
-#thumb
+.message
+{
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: darkslategray;
+	font-size: 150%;
+}
+.left
+{
+	float: left;
+	width: 45%;
+}
+.right
+{
+	float: right;
+	width: 45%;
+}
+.thumb
 {
 	margin-right: 10px;
 }

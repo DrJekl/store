@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-	let thumbs = document.querySelectorAll("#thumb");
-	let pics = document.querySelectorAll("#pic");
+	let thumbs = document.querySelectorAll(".thumb");
+	let pics = document.querySelectorAll(".pic");
 	for (let i = 0; i < thumbs.length; i++) {
 		thumbs[i].style.borderRadius = "5px";
 		if (thumbs[i].width >= thumbs[i].height) {

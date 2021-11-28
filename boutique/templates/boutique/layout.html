@@ -16,9 +16,9 @@
         <h1>Boutique</h1>
         <div>
             {% if user.is_authenticated %}
-                Signed in as <strong>{{ user.username }}</strong>.
+                <p class="message">Signed in as <strong>{{ user.username }}</strong>.</p>
             {% else %}
-                Not signed in.
+                <p class="message">Not signed in.</p>
             {% endif %}
         </div>
         <ul class="nav" width="400px">

@@ -38,10 +38,10 @@ def create(request):
 			if form.is_valid:
 				listing = form.save(commit=False)
 				listing.date = timezone.now()
-				listing.save()
-				return redirect("look", listing.name)
-			else:
-				return render(request, "boutique/error.html")
+				if not len(Listing.objects.filter(name=listing.name)):
+					listing.save()
+					return redirect("index")
+		return render(request, "boutique/error.html")
 	form = CreateListing()
 	return render(request, "boutique/create.html", {
 			"form": form
@@ -56,8 +56,9 @@ def demand(request):
 		if form.is_valid:
 			listing = form.save(commit=False)
 			listing.buyer = user
-			if listing.date <= timezone.now():
-				message = "You have to pick a date in the future!"
+			if (len(Listing.objects.filter(name=listing.name, buyer=user.id)) > 1) or listing.date <= timezone.now():
+				message += "You have already requested this item!\n" * (len(Listing.objects.filter(name=listing.name, buyer=user.id)) > 1)
+				message += "You have to pick a date in the future.\n" * (listing.date <= timezone.now())
 				return render(request, "boutique/demand.html", {
 						"form": form,
 						"message": message

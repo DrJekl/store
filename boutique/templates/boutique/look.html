@@ -9,10 +9,10 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="name">{{ item.name }}</h1>
+	<h1 class="title">{{ item.name }}</h1>
 	<div class="wrapper">
 		{% if item.pic %}
-			<img id="pic" src="{{ item.pic.url }}">
+			<img class="pic" src="{{ item.pic.url }}">
 		{% endif %}
 		<br>
 		<ul>

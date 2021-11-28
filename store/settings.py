@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(yef8rh(oj-7m35rt6b4i=ec49ccea7i2$6v#z9_*596e13y4y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -121,6 +121,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+DATETIME_FORMAT = '%d/%m/%Y'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -161,11 +163,9 @@ AWS_ACCESS_KEY_ID = os.environ.get('AKIAY2KB57XVQYJSI6HC')
 AWS_SECRET_ACCESS_KEY = os.environ.get('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')
 AWS_STORAGE_BUCKET_NAME = 'nagelmadebucket'
 
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-
 if DEBUG == False:
     MEDIA_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.eu-west-1.amazonaws.com/'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
     # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 

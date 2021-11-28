@@ -40,4 +40,5 @@ class DemandListing(forms.ModelForm):
 			"pic": forms.FileInput(attrs={"class": "form-control"}),
 			"description": forms.Textarea(attrs={"class": "form-control"}),
 			"price": forms.NumberInput(attrs={"class": "form-control"}),
+			"date": forms.DateInput(attrs={"placeholder": "DD/MM/YYYY"}),
 		}

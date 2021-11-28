@@ -31,7 +31,7 @@ class Listing(models.Model):
 	pic = models.ImageField(upload_to="images/", null=True, blank=True)
 	description = models.CharField(max_length=256, null=True, blank=True)
 	price = models.DecimalField(max_digits=8, decimal_places=2)
-	date = models.DateTimeField()
+	date = models.DateTimeField(null=True, blank=True)
 	buyer = models.ForeignKey("User", on_delete=models.SET_NULL, null=True, blank=True)
 	available = models.BooleanField(default=True)
 

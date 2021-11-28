@@ -7,8 +7,8 @@
 {% endblock %}
 
 {% block body %}
-	<p>{{ message }}</p>
-	<div class="wrapper">
+	<p class="message">{{ message }}</p>
+	<div class="wrapper left">
 		<div class="form-group">
 			<form method="post" enctype="multipart/form-data">
 				{% csrf_token %}
@@ -18,5 +18,10 @@
 				<input type="submit">
 			</form>
 		</div>
+	</div>
+	<div class="wrapper right">
+		<p class="message">Have something in mind that we don't have? Request the item you've been dreaming of and, 
+			if we can, we will make it! Give it a name and feel free to include and picture, description, a price you think is fair,
+			and the date you need it by. When we come to an agreement, we will start work on the item just for you!</p>
 	</div>
 {% endblock %}
