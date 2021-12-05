@@ -64,7 +64,6 @@ class DemandListing(forms.ModelForm):
 		months = [i + 1 for i in range(12)]
 		month = int(self.date.strftime("%m"))
 		day = int(self.date.strftime("%d"))
-		print("DAY: ", day, "  MONTH: ", month, sep=" ")
 		if month not in months or day < 1:
 			return False
 		if month in [1, 3, 5, 7, 8, 10, 12]:
