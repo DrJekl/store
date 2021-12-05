@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(yef8rh(oj-7m35rt6b4i=ec49ccea7i2$6v#z9_*596e13y4y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -121,7 +121,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-DATETIME_FORMAT = '%d/%m/%Y'
+#DATETIME_FORMAT = '%d/%m/%Y'
+
+#DATE_INPUT_FORMATS = '%d-%m-%Y'
+
+#DATETIME_INPUT_FORMATS = '%d/%m/%Y'
 
 
 # Static files (CSS, JavaScript, Images)

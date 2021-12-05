@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
+from datetime import timedelta, datetime
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
@@ -56,9 +57,9 @@ def demand(request):
 		if form.is_valid:
 			listing = form.save(commit=False)
 			listing.buyer = user
-			if (len(Listing.objects.filter(name=listing.name, buyer=user.id)) > 1) or listing.date <= timezone.now():
-				message += "You have already requested this item!\n" * (len(Listing.objects.filter(name=listing.name, buyer=user.id)) > 1)
-				message += "You have to pick a date in the future.\n" * (listing.date <= timezone.now())
+			if (len(Listing.objects.filter(name=listing.name, buyer=user.id)) > 0) or not listing.future2():
+				message += "You have already requested this item!" * (len(Listing.objects.filter(name=listing.name, buyer=user.id)) > 0)
+				message += "You have to pick a date in the future." * (not listing.future2())
 				return render(request, "boutique/demand.html", {
 						"form": form,
 						"message": message

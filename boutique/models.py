@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
+from datetime import datetime
 
 # Create your models here.
 class User(AbstractUser):
@@ -37,3 +38,6 @@ class Listing(models.Model):
 
 	def __str__(self):
 		return f"{self.name} for {self.price}"
+
+	def future2(self):
+		return datetime.strftime(self.date, "%m/%d/%Y") > datetime.strftime(timezone.now(), "%d/%m/%Y")
